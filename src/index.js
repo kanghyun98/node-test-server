@@ -4,6 +4,7 @@ import cors from 'cors';
 import errorHandler, { notFoundErrorHandler } from './errors/errorHandler.js';
 import testRouter from './routes/test.js';
 import randomRouter from './routes/random.js';
+import addRouter from './routes/add.js';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routers
 app.use('/test', testRouter);
 app.use('/random', randomRouter);
+app.use('/add', addRouter);
 
 // Check
 app.get('/', (req, res) => {
